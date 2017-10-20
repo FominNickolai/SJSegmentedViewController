@@ -39,6 +39,10 @@ class SJUtil {
 		let navigationController = viewController.navigationController
 
 		if navigationController?.childViewControllers.last == viewController {
+			//If NavBar is transparent and we want to disply headerView under status bar
+			if !(navigationController?.navigationBar.isOpaque)! {
+			   return 0
+			}
 
 			if navigationController?.isNavigationBarHidden == false {
 				topSpacing = UIApplication.shared.statusBarFrame.height
