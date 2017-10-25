@@ -40,7 +40,7 @@ class SJUtil {
 
 		if navigationController?.childViewControllers.last == viewController {
 			//If NavBar is transparent and we want to disply headerView under status bar
-			if !(navigationController?.navigationBar.isOpaque)! && navigationController?.navigationBar.tag == 1 {
+			if navigationController?.navigationBar.tag == 1 {
                 return 0
 			}
 
