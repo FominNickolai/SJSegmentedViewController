@@ -22,7 +22,7 @@
 
 import UIKit
 
-class SJSegmentedScrollView: UIScrollView {
+@objc open class SJSegmentedScrollView: UIScrollView {
     
     var segmentView: SJSegmentView?
     var headerViewHeight: CGFloat! = 0
