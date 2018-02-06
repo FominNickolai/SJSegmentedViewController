@@ -76,7 +76,7 @@ import UIKit
         
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -298,7 +298,7 @@ import UIKit
         }
     }
 
-	override func observeValue(forKeyPath keyPath: String?,
+	override open func observeValue(forKeyPath keyPath: String?,
 	                           of object: Any?,
 	                           change: [NSKeyValueChangeKey : Any]?,
 	                           context: UnsafeMutableRawPointer?) {
