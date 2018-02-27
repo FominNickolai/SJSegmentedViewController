@@ -156,8 +156,7 @@ import UIKit
      */
     open var segmentCornerRadius: CGFloat = 0 {
         didSet {
-            segmentedScrollView.layer.cornerRadius = segmentCornerRadius
-	    segmentedScrollView.layer.masksToBounds = true
+            segmentedScrollView.segmentCornerRadius = segmentCornerRadius
         }
     }
     
