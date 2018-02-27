@@ -58,7 +58,7 @@ import UIKit
 			contentView?.showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
 		}
 	}
-
+    var segmentCornerRadius: CGFloat = 0
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -201,7 +201,7 @@ import UIKit
                 self.contentView?.movePageToIndex(index, animated: animated)
                 self.didSelectSegmentAtIndex?(segment, index, animated)
             }
-            
+            segmentView?.selectedSegmentCornerRadius = segmentCornerRadius
             segmentView?.setSegmentsView(frame)
             addSubview(segmentView!)
             
