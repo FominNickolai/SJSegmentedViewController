@@ -29,6 +29,12 @@ class SJSegmentView: UIScrollView {
             selectedSegmentView?.backgroundColor = selectedSegmentViewColor
         }
     }
+	
+    var selectedSegmentCornerRadius: CGFloat = 0 {
+        didSet {
+            selectedSegmentView?.layer.cornerRadius = selectedSegmentCornerRadius
+        }
+    }
     
     var titleColor: UIColor? {
         didSet {
