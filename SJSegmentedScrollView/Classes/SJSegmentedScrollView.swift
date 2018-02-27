@@ -202,6 +202,10 @@ import UIKit
                 self.didSelectSegmentAtIndex?(segment, index, animated)
             }
             segmentView?.selectedSegmentCornerRadius = segmentCornerRadius
+	    if segmentCornerRadius != 0 {
+                segmentView?.layer.cornerRadius = segmentCornerRadius
+                segmentView?.backgroundColor = .red
+            }
             segmentView?.setSegmentsView(frame)
             addSubview(segmentView!)
             
