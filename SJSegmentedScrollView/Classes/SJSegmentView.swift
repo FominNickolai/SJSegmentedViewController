@@ -230,6 +230,7 @@ class SJSegmentView: UIScrollView {
         
         let segmentView = UIView()
         segmentView.backgroundColor = selectedSegmentViewColor
+	segmentView.layer.cornerRadius = selectedSegmentCornerRadius
         segmentView.translatesAutoresizingMaskIntoConstraints = false
         segmentContentView!.addSubview(segmentView)
         selectedSegmentView = segmentView
