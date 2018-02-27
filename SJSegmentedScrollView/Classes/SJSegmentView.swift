@@ -232,7 +232,11 @@ class SJSegmentView: UIScrollView {
         segmentView.backgroundColor = selectedSegmentViewColor
 	segmentView.layer.cornerRadius = selectedSegmentCornerRadius
         segmentView.translatesAutoresizingMaskIntoConstraints = false
-        segmentContentView!.addSubview(segmentView)
+        if selectedSegmentCornerRadius != 0 {
+            segmentContentView!.insertSubview(segmentView, at: 0)
+        } else {
+            segmentContentView!.addSubview(segmentView)
+        }
         selectedSegmentView = segmentView
         
         xPosConstraints = NSLayoutConstraint(item: segmentView,
@@ -277,7 +281,9 @@ class SJSegmentView: UIScrollView {
 			segmentTab?.titleColor(titleColor!)
 			segmentTab?.titleFont(font!)
 		}
-
+		if selectedSegmentCornerRadius != 0 {
+                	segmentTab?.layer.cornerRadius = selectedSegmentCornerRadius
+            	}
 		segmentTab?.didSelectSegmentAtIndex = didSelectSegmentAtIndex
 
         return segmentTab!
