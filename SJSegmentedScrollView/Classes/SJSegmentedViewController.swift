@@ -146,6 +146,20 @@ import UIKit
             segmentedScrollView.segmentBackgroundColor = segmentBackgroundColor
         }
     }
+	
+     /**
+     *  Set corner radius for segment.
+     *
+     *  By default the corner is 0.
+     *
+     *  segmentedViewController.segmentCornerRadius = 0
+     */
+    open var segmentCornerRadius = 0 {
+        didSet {
+            segmentedScrollView.layer.cornerRadius = segmentCornerRadius
+	    segmentedScrollView.layer.masksToBounds = true
+        }
+    }
     
     /**
      *  Set shadow for segment.
