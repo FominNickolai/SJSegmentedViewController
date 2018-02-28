@@ -33,6 +33,7 @@ class SJSegmentView: UIScrollView {
     var selectedSegmentCornerRadius: CGFloat = 0 {
         didSet {
             selectedSegmentView?.layer.cornerRadius = selectedSegmentCornerRadius
+	    segmentContentView?.layer.cornerRadius = selectedSegmentCornerRadius
         }
     }
     
