@@ -60,6 +60,8 @@ import UIKit
 	}
     var segmentCornerRadius: CGFloat = 0
     var segmentContainerPadding: CGFloat = 0
+    var segmentsContainerBorderWidth: CGFloat = 0
+    var segmentsContainerBorderColor: CGColor = UIColor.clear.cgColor
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -205,6 +207,9 @@ import UIKit
             segmentView?.selectedSegmentCornerRadius = segmentCornerRadius
 	    segmentView?.segmentContainerPadding = segmentContainerPadding
             segmentView?.setSegmentsView(frame)
+	    segmentView?.layer.borderWidth = segmentsContainerBorderWidth
+            segmentView?.layer.borderColor = segmentsContainerBorderColor
+            segmentView?.layer.cornerRadius = segmentCornerRadius
             addSubview(segmentView!)
             
             let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-\(segmentContainerPadding)-[segmentView]-\(segmentContainerPadding)-|",
