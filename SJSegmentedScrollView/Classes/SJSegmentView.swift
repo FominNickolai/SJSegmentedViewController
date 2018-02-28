@@ -76,8 +76,8 @@ class SJSegmentView: UIScrollView {
     var contentViewWidthConstraint: NSLayoutConstraint?
     var selectedSegmentViewWidthConstraint: NSLayoutConstraint?
     var contentSubViewWidthConstraints = [NSLayoutConstraint]()
-	var controllers: [UIViewController]?
-    
+    var controllers: [UIViewController]?
+    var segmentContainerPadding: CGFloat = 0
     var contentView: SJContentView? {
         didSet {
             contentView!.addObserver(self,
@@ -316,7 +316,11 @@ class SJSegmentView: UIScrollView {
 			maxWidth = CGFloat(width)
 		}
 
-		return maxWidth
+		if self.segmentContainerPadding != 0 {
+                   return maxWidth - segmentContainerPadding * 2 / CGFloat((controllers?.count)!)
+                } else {
+                   return maxWidth
+                }
 	}
     
 	override func observeValue(forKeyPath keyPath: String?,
