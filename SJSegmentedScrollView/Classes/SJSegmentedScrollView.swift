@@ -204,9 +204,6 @@ import UIKit
             }
             segmentView?.selectedSegmentCornerRadius = segmentCornerRadius
 	    segmentView?.segmentContainerPadding = segmentContainerPadding
-	    if segmentCornerRadius != 0 {
-                segmentView?.layer.cornerRadius = segmentCornerRadius
-            }
             segmentView?.setSegmentsView(frame)
             addSubview(segmentView!)
             
