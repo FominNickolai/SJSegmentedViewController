@@ -159,6 +159,19 @@ import UIKit
             segmentedScrollView.segmentCornerRadius = segmentCornerRadius
         }
     }
+
+    /**
+     *  Set padding for segment container.
+     *
+     *  By default padding is 0.
+     *
+     *  segmentedViewController.segmentCornerRadius = 0
+     */
+    open var segmentContainerPadding: CGFloat = 0 {
+        didSet {
+            segmentedScrollView.segmentContainerPadding = segmentContainerPadding
+        }
+    }	
     
     /**
      *  Set shadow for segment.
