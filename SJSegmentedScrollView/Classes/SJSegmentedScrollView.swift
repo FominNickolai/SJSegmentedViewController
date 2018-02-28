@@ -59,6 +59,7 @@ import UIKit
 		}
 	}
     var segmentCornerRadius: CGFloat = 0
+    var segmentContainerPadding: CGFloat = 0
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -202,13 +203,14 @@ import UIKit
                 self.didSelectSegmentAtIndex?(segment, index, animated)
             }
             segmentView?.selectedSegmentCornerRadius = segmentCornerRadius
+	    segmentView?.segmentContainerPadding = segmentContainerPadding
 	    if segmentCornerRadius != 0 {
                 segmentView?.layer.cornerRadius = segmentCornerRadius
             }
             segmentView?.setSegmentsView(frame)
             addSubview(segmentView!)
             
-            let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[segmentView]-0-|",
+            let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-\(segmentContainerPadding)-[segmentView]-\(segmentContainerPadding)-|",
                                                                                        options: [],
                                                                                        metrics: nil,
                                                                                        views: ["segmentView": segmentView!])
