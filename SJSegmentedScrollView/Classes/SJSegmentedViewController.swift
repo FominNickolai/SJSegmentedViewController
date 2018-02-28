@@ -172,6 +172,32 @@ import UIKit
             segmentedScrollView.segmentContainerPadding = segmentContainerPadding
         }
     }	
+	
+    /**
+     *  Set border width for segment container.
+     *
+     *  By default width is 0.
+     *
+     *  segmentedViewController.segmentsContainerBorderWidth = 0
+     */
+    open var segmentsContainerBorderWidth: CGFloat = 0 {
+        didSet {
+            segmentedScrollView.segmentsContainerBorderWidth = segmentsContainerBorderWidth
+        }
+    }
+    
+    /**
+     *  Set border color for segment container.
+     *
+     *  By default width is clear.
+     *
+     *  segmentedViewController.segmentsContainerBorderColor = 0
+     */
+    open var segmentsContainerBorderColor: CGColor = UIColor.clear.cgColor {
+        didSet {
+            segmentedScrollView.segmentsContainerBorderColor = segmentsContainerBorderColor
+        }
+    }
     
     /**
      *  Set shadow for segment.
